@@ -1,0 +1,16 @@
+<div class="flex flex-column">
+<h2>New game</h2>
+<ul class="flex">
+  <% @grid.each do |letter| %>
+    <li class="btn btn-primary box-shadow "><%=letter[0].capitalize%></li>
+  <% end %>
+</ul>
+</div>
+<form action="/score" data-turbo="false">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <div class="mb-3 flex flex-column">
+    <label for="attempt" class="form-label">What is the longest word you can find?</label>
+    <input type="text" name="attempt" id="attempt" class="form-control">
+  </div>
+  <input type="submit" value="Play" class="btn btn-primary">
+</form>

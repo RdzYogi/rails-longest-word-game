@@ -1,0 +1,9 @@
+<h2>Result</h2>
+<h3>Total score is: <%= @total_score %></h3>
+<% if @result[:score] > 0 %>
+  <h3><strong>Congratulations! </strong><%= @result[:message]%> score: <%= @result[:score] %></h3>
+<% else  %>
+  <h3><%= @result[:message]%> score: <%= @result[:score] %></h3>
+<% end %>
+
+<%= link_to 'Play again?', root_path %>
